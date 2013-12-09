@@ -1,4 +1,14 @@
 Prediction::Application.routes.draw do
+  # get "events/index"
+  # get "events/show"
+  # get "events/new"
+  # get "events/edit"
+  get "logout" => "sessions#destroy", :as => "logout"
+  get "login" => "sessions#new", :as => "login"
+  get "signup" => "users#new", :as => "signup"
+  resources :sessions
+  resources :users
+  resources :events
   get "welcome/index"
   get "/about" => "welcome#about"
   get "welcome/about"

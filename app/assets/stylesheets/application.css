@@ -9,5 +9,20 @@
  * compiled file, but it's generally better to create a new file per style scope.
  *
  *= require_self
+ *= require foundation_and_overrides
  *= require_tree .
+
+
+ pro:
+   -Complete control over load order
+   -Sass variables translate across files
+
+   con:
+     If you forget to add @import statements in here, they won't be included.
+
+     @import 'variables'; 
+     @import 'foundation_and_overrides';
+
+
  */
+

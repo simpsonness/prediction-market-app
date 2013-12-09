@@ -1,0 +1,13 @@
+  <%= form_for @event do |f| %>
+      <%= f.label :title %>
+      <%= f.text_field :title %>
+
+      <%= f.label :description %>
+      <%= f.text_area :description %>
+
+      <%= f.label :sell_price %>
+      <%= f.text_area :price %>
+
+      <%= f.submit "Save" %>
+  <% end %>
+
