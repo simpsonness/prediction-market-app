@@ -1,6 +1,7 @@
 <h1><%= @event.title %></h1>
 <p><%= @event.description %></p>
-<p>Put your option buy form here</p>
-<p><%= @event.current_buy_price %></p>
-<p>Put your option sell form here</p>
-<p><%= @event.current_sell_price %></p>
+<p><%= @event.price %></p>
+<p></p>
+
+<%= link_to "Edit", edit_event_path %>
+<%= link_to 'Destroy', @event, method: :delete, data: {confirm: 'Are you sure?'} %>

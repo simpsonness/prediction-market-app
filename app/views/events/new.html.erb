@@ -6,8 +6,13 @@
       <%= f.text_area :description %>
 
       <%= f.label :sell_price %>
-      <%= f.text_area :price %>
+      <%= f.text_field :price %>
+
+      <%= f.label :buy_price %>
+      <%= f.text_field :price %>
 
       <%= f.submit "Save" %>
   <% end %>
+
+  <%= link_to 'Back', events_path %>
 

@@ -1,2 +1,20 @@
-<h1>Events#edit</h1>
-<p>Find me in app/views/events/edit.html.erb</p>
+<h1>Edit events</h1>
+<%= form_for @event do |f| %>
+<%= f.label :title %>
+<%= f.text_field :title %>
+
+<%= f.label :description %>
+<%= f.text_area :description %>
+
+<%= f.label :sell_price %>
+<%= f.text_field :price %>
+
+<%= f.label :buy_price %>
+<%= f.text_field :price %>
+
+<%= f.submit "Save" %>
+
+<% end %>
+
+<%= link_to 'Show', event_path(@event) %>
+<%= link_to 'Back', events_path %>
