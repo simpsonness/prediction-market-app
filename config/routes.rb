@@ -1,4 +1,9 @@
 Prediction::Application.routes.draw do
+  # get "options/index"
+  # get "options/new"
+  # get "options/create"
+  # get "options/update"
+  # get "options/edit"
   # get "events/index"
   # get "events/show"
   # get "events/new"
@@ -9,6 +14,7 @@ Prediction::Application.routes.draw do
   resources :sessions
   resources :users
   resources :events
+  resources :options
   get "welcome/index"
   get "/about" => "welcome#about"
   get "welcome/about"
