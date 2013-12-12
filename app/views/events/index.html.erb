@@ -2,3 +2,5 @@
 <% @events.each do |event| %>
 <p><%= link_to "#{event.title}", event_path(event) %></p>
 <% end %>
+
+<%=link_to"Create", new_event_path %>
