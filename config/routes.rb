@@ -14,7 +14,7 @@ Prediction::Application.routes.draw do
   resources :sessions
   resources :users
   resources :events
-  resources :options
+  resources :orders
   get "welcome/index"
   get "/about" => "welcome#about"
   get "welcome/about"

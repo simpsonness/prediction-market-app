@@ -1,0 +1,17 @@
+<h1>GOGOGO</h1>
+  <%= form_for @order do |f| %>
+
+    <%= f.label :quantity %>
+    <%= f.text_field :quantity %>
+
+    <%= f.label :book_price %>
+    <%= f.text_field :book_price %>
+
+    <%= f.label :option_type %>
+    <%= f.text_field :option_type %>
+
+    <%= f.submit "Save" %>
+
+  <% end %>
+
+    <%= link_to 'Back', events_path %>
