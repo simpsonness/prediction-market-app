@@ -7,8 +7,12 @@
     <%= f.label :book_price %>
     <%= f.text_field :book_price %>
 
-    <%= f.label :option_type %>
-    <%= f.text_field :option_type %>
+    <%= f.radio_button :option_type, "buy" %>
+    <%= f.label :option_type, "Buy" %>
+    <%= f.radio_button :option_type, "sell" %>
+    <%= f.label :option_type, "Sell" %>
+    
+
 
     <%= f.submit "Save" %>
 

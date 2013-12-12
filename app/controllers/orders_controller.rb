@@ -18,6 +18,15 @@ class OrdersController < ApplicationController
     end
   end
 
+  def show
+    @order = Order.find(params[:id])
+    if @order.save
+      redirect_to events_path, notice: 'Order successfully'
+    else
+      render :action => :show
+    end
+  end
+
   def update
   end
 
@@ -26,6 +35,6 @@ class OrdersController < ApplicationController
 
   private
   def order_params
-    params.require(:order).permit(:quantity, :book_price, :order_type)
+    params.require(:order).permit(:quantity, :book_price, :option_type)
   end
 end
