@@ -8,7 +8,9 @@ class OrdersController < ApplicationController
   end
 
   def create
-    @order = Order.new(order_params)
+    @order = current_user.orders.build(order_params)
+    # @order = Order.new(order_params)
+    # @order.user = current_user
      if @order.save
       flash[:notice] = "order was saved!"
       redirect_to @order

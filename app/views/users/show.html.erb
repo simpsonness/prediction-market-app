@@ -1,1 +1,10 @@
 <h1>good</h1>
+<h3><%= @user.username %></h3>
+<p><% @user.orders.each do |order| %></p>
+Quantity<br>
+<%= order.quantity %><br>
+Price<br>
+<%= order.book_price %><br>
+Type<br>
+<%= order.option_type %>
+<% end %>
