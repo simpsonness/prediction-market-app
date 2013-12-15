@@ -7,9 +7,10 @@ Sell Price
 buy Price
 <p><%=  @event.price %></p>
 
+<%= image_tag @event.avatar %><br>
+
 <%= link_to 'Order', new_order_path %>
 
 <%= link_to 'Back', events_path %>
 
 <%= link_to "Edit", edit_event_path %>
-<%= link_to 'Destroy', @event, method: :delete, data: {confirm: 'Are you sure?'} %>
