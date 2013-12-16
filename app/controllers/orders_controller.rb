@@ -5,13 +5,15 @@ class OrdersController < ApplicationController
 
   def new
     @order = Order.new
+
   end
 
   def create
     @order = current_user.orders.build(order_params)
+    @order.quantity = 1
     # @order = Order.new(order_params)
     # @order.user = current_user
-     if @order.save
+     if @order.save_or_create_contract
       flash[:notice] = "order was saved!"
       redirect_to @order
      else
@@ -23,7 +25,7 @@ class OrdersController < ApplicationController
   def show
     @order = Order.find(params[:id])
     if @order.save
-      redirect_to events_path, notice: 'Order successfully'
+      redirect_to order_path, notice: 'Order successfully'
     else
       render :action => :show
     end
@@ -39,4 +41,6 @@ class OrdersController < ApplicationController
   def order_params
     params.require(:order).permit(:quantity, :book_price, :option_type)
   end
+
+  
 end
