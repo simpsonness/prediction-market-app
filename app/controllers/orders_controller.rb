@@ -1,6 +1,8 @@
 class OrdersController < ApplicationController
   def index
-    @orders = Order.all
+    @event = Event.find(params[:event_id])
+    @orders = @event.orders
+
   end
 
   def new

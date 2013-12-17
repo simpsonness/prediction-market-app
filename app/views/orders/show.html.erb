@@ -2,12 +2,14 @@
 
   <h3>GOGOGO</h3>
   name
-  <p><%= @user.username %></p>
+  <p><h4><%= @user.username %></h4></p>
   event
-  <p><%= @event.title %></p>
+  <p><h4><%= @event.title %></h4></p>
   quantity
-  <p><%= @order.quantity %></p>
+  <p><h4><%= @order.quantity %></h4></p>
   price
-  <p><%= @order.book_price %></p>
+  <p><h4><%= @order.book_price %></h4></p>
 
 <% end %>
+<%= link_to 'Back', events_path %>
+

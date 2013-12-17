@@ -1,6 +1,26 @@
 <h1>GOGOGO</h1>
 <p>Find the apple!!!!</p><br>
 
+<% if current_user %>
+
+  <h3>GOGOGO</h3>
+    <% @orders.each do |order| %>
+    user
+    <p><h4><%= order.user.username %></h4></p>
+    event
+    <p><h4><%= order.event.title %></h4></p>
+     price
+    <p><h4><%= order.book_price %></h4></p>
+    quantity
+    <p><h4><%= order.quantity %></h4></p>
+  <% end %>
+
+<% end %>
+<%= link_to 'Back', events_path %>
+
+
+
+
 
 
 

@@ -11,7 +11,6 @@ class Order < ActiveRecord::Base
       self.save_as_contract
       return "Contract"
     else
-      puts "*************** no first_match ********************************"
       self.save
       return "Order"
     end
