@@ -5,4 +5,11 @@ class Event < ActiveRecord::Base
   validates :price, :sell_price, :numericality => {:only_integer => true}
   has_many :orders
   has_many :users, :through => :orders
+
+  def can_order?
+    self.start_time < Time.zone.now && Time.zone.now < self.end_time
+  end
+
+  
+
 end

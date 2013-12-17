@@ -1,22 +1,33 @@
 <h1><%= @event.title %></h1>
 <p><%= @event.description %></p>
 
-Sell Price
-<p><%=  @event.sell_price %></p>
+ <% if @event.can_order? %> 
 
-buy Price
-<p><%=  @event.price %></p>
+   Sell Price
+   <p><%=  @event.sell_price %></p>
 
-start time
-<p><%= @event.start_time %></p>
+   buy Price
+   <p><%=  @event.price %></p>
 
-end time
-<p><%= @event.end_time %></p>
+   start time
+   <p><%= @event.start_time %></p>
+
+   end time
+   <p><%= @event.end_time %></p>
+
+   <% else %>
+   blablablablatototototo
+
+  <% end %>
 
 <%= image_tag @event.avatar %><br>
+
+
 
 <%= link_to 'Order', new_event_order_path(params[:id]) %>
 
 <%= link_to 'Back', events_path %>
 
 <%= link_to "Edit", edit_event_path %>
+
+
