@@ -11,11 +11,17 @@ class OrdersController < ApplicationController
   def create
     @order = current_user.orders.build(order_params)
     @order.quantity = 1
+    @order.event_id = params[:event_id]
+
     # @order = Order.new(order_params)
     # @order.user = current_user
-     if @order.save_or_create_contract
-      flash[:notice] = "order was saved!"
-      redirect_to @order
+     if type = @order.save_or_create_contract
+      if type == "Order" 
+        flash[:notice] = "order was saved!"
+        redirect_to event_order_path(@order.event, @order)
+      elsif type =="Contract"
+        redirect_to event_orders_path
+      end
      else
       flash[:error] = "order wasn't saved."
       render :new
@@ -24,11 +30,15 @@ class OrdersController < ApplicationController
 
   def show
     @order = Order.find(params[:id])
-    if @order.save
-      redirect_to order_path, notice: 'Order successfully'
-    else
-      render :action => :show
-    end
+    @event = @order.event
+    @user = @order.user
+    @book_price = @order.book_price
+
+    # if @order.save
+    #   redirect_to order_path, notice: 'Order successfully'
+    # else
+    #   render :action => :show
+    # end
   end
 
   def update

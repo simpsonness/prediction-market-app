@@ -9,7 +9,7 @@ buy Price
 
 <%= image_tag @event.avatar %><br>
 
-<%= link_to 'Order', new_order_path %>
+<%= link_to 'Order', new_event_order_path(params[:id]) %>
 
 <%= link_to 'Back', events_path %>
 

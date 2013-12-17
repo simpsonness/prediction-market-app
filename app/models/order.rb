@@ -7,9 +7,13 @@ class Order < ActiveRecord::Base
 
   def save_or_create_contract
     if self.first_match
+      self.id = Order.last.id + 1
       self.save_as_contract
+      return "Contract"
     else
+      puts "*************** no first_match ********************************"
       self.save
+      return "Order"
     end
   end  
 
@@ -35,6 +39,7 @@ class Order < ActiveRecord::Base
       contract.sell_order_id = self.id
     end      
     contract.save
+    return
   end
 
 end

@@ -1,5 +1,5 @@
 <h1>GOGOGO</h1>
-  <%= form_for @order do |f| %>
+  <%= form_for @order, :url => event_orders_path(params[:event_id]) do |f| %>
 
     Quantity: 1
 

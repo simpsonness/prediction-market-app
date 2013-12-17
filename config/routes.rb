@@ -13,8 +13,9 @@ Prediction::Application.routes.draw do
   get "signup" => "users#new", :as => "signup"
   resources :sessions
   resources :users
-  resources :events
-  resources :orders
+  resources :events do
+    resources :orders
+  end
   get "welcome/index"
   get "/about" => "welcome#about"
   get "welcome/about"
