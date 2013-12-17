@@ -38,7 +38,7 @@ class Order < ActiveRecord::Base
       contract.sell_order_id = self.id
     end      
     contract.save
-    return
+    
   end
 
 end

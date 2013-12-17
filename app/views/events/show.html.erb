@@ -7,6 +7,12 @@ Sell Price
 buy Price
 <p><%=  @event.price %></p>
 
+start time
+<p><%= @event.start_time %></p>
+
+end time
+<p><%= @event.end_time %></p>
+
 <%= image_tag @event.avatar %><br>
 
 <%= link_to 'Order', new_event_order_path(params[:id]) %>
