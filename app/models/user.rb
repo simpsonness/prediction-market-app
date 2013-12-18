@@ -1,5 +1,5 @@
 class User < ActiveRecord::Base
-
+  has_many :owned_events, :class_name => "Event"
   has_many :orders
   has_many :events, :through => :orders
   

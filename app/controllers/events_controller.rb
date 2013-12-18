@@ -1,10 +1,14 @@
 class EventsController < ApplicationController
   before_filter :require_login
+  before_filter :find_event, :only => [:edit, :update, :destroy]
+  before_filter :make_sure_owner, :only => [:edit, :update, :destroy]
+  
+
   def index
     @events = Event.all
   end
-def
-   show
+  
+  def show
     @event = Event.find(params[:id])
   end
 
@@ -25,13 +29,15 @@ def
   end
 
   def edit
-    @event = Event.find(params[:id])
+
+    
+
   end
 
-  def update
-    @event = Event.find(params[:id])
 
-    if @event.update_attributes(event_params)
+  def update
+
+    if  @event.update_attributes(event_params)
       redirect_to event_path(@event)
     else
       render :edit
@@ -39,7 +45,6 @@ def
   end
 
   def destroy
-    @event = Event.find(params[:id])
     @event.destroy
     redirect_to events_path
   end
@@ -48,6 +53,16 @@ def
 
   def event_params
     params.require(:event).permit(:title, :description, :price, :sell_price, :avatar, :start_time, :end_time)
+  end
+
+  def find_event
+    @event = Event.find(params[:id])
+  end
+
+  def make_sure_owner
+    if current_user != @event.owner
+       redirect_to events_path
+    end
   end
 
 end
