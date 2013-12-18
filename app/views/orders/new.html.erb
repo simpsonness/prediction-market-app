@@ -1,6 +1,6 @@
 <h1>GOGOGO</h1>
   <%= form_for @order, :url => event_orders_path(params[:event_id]) do |f| %>
-
+<div class="editor">
     Quantity: 1
 
     <%= f.label :book_price %>
@@ -10,6 +10,7 @@
     <%= f.label :option_type, "Buy" %>
     <%= f.radio_button :option_type, "sell" %>
     <%= f.label :option_type, "Sell" %>
+</div>
     
 
 
@@ -18,4 +19,5 @@
   <% end %>
  
     <%= link_to 'Back', events_path %><br>
+   
 

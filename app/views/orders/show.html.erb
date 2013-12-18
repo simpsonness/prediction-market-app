@@ -1,13 +1,15 @@
 <% if current_user %>
 
-  <h3>GOGOGO</h3>
+  <h3 class="header3">Execution of an Option</h3>
+  <div class="editor">
   name
-  <p><%= @user.username %></p>
+  <p class="input"><%= @user.username %></p>
   event
-  <p><%= @event.title %></p>
+  <p class="input"><%= @event.title %></p>
   quantity
-  <p><%= @order.quantity %></p>
+  <p class="input"><%= @order.quantity %></p>
   price
-  <p><%= @order.book_price %></p>
-
+  <p class="input"><%= @order.book_price %></p>
+</div>
 <% end %>
+<link href="application.css" rel="stylesheet"/>

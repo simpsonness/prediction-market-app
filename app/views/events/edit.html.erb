@@ -1,22 +1,26 @@
-<h1>Edit events</h1>
-<%= form_for @event do |f| %>
-<%= f.label :title %>
-<%= f.text_field :title %>
+<h1 class="header1">EDIT EVENTS</h1>
+<div class="editor">
+	
+	<%= form_for @event do |f| %>
 
-<%= f.label :description %>
-<%= f.text_area :description %>
+	<%= f.label :title %>
+	<%= f.text_field :title %>
 
-<%= f.label :sell_price %>
-<%= f.text_field :sell_price %>
+	<%= f.label :description %>
+	<%= f.text_area :description %>
 
-<%= f.label :buy_price %>
-<%= f.text_field :price %>
+	<%= f.label :sell_price %>
+	<%= f.text_field :sell_price %>
 
-<%= f.label :avatar %>
-<%= f.file_field :avatar %>
+	<%= f.label :buy_price %>
+	<%= f.text_field :price %>
 
+	<%= f.label :avatar %>
+	<%= f.file_field :avatar %>
 
-<%= f.submit "Save" %>
+	<%= f.submit "Save" %>
+
+</div>
 
 <% end %>
 

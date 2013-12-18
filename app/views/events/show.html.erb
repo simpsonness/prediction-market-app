@@ -1,16 +1,61 @@
-<h1><%= @event.title %></h1>
-<p><%= @event.description %></p>
+<h1 class="header1"><%= @event.title %></h1>
+
 
 Sell Price
-<p><%=  @event.sell_price %></p>
+<p class="trade" id="sell"><%=  @event.sell_price %></p>
 
 buy Price
-<p><%=  @event.price %></p>
+<p class="trade" id="buy"><%=  @event.price %></p>
 
-<%= image_tag @event.avatar %><br>
+
 
 <%= link_to 'Order', new_event_order_path(params[:id]) %>
 
 <%= link_to 'Back', events_path %>
 
 <%= link_to "Edit", edit_event_path %>
+<!-- Header and Nav -->
+ 
+  
+ 
+  <!-- End Header and Nav -->
+ 
+ 
+  
+  <!-- Second Band (Image Left with Text) -->
+ 
+  <div class="row">
+    <div class="large-4 columns">
+      <br><%= image_tag @event.avatar %></br>
+    </div>
+    <div class="large-8 columns">
+      <h4>This is a content section.</h4>
+      <div class="row">
+        
+        <div class="large-6 columns">
+          <p><%= @event.description %></p>
+        </div>
+      </div>
+    </div>
+  </div>
+ 
+  <!-- Footer -->
+ 
+  <footer class="row">
+    <div class="large-12 columns">
+      <hr />
+      <div class="row">
+        <div class="large-6 columns">
+          <p>&copy; Shan & Chris</p>
+        </div>
+        <div class="large-6 columns">
+          <ul class="inline-list right">
+            <li><a href="#">Link 1</a></li>
+            <li><a href="#">Link 2</a></li>
+            <li><a href="#">Link 3</a></li>
+         
+          </ul>
+        </div>
+      </div>
+    </div>
+  </footer>              

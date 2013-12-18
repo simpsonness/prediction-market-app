@@ -1,3 +1,5 @@
+  <h1 class="header1"> The Event To Be Entered For Prediction.</h1>
+  <div class="editor">
   <%= form_for @event do |f| %>
       <%= f.label :title %>
       <%= f.text_field :title %>
@@ -15,7 +17,9 @@
       <%= f.file_field :avatar %>
 
       <%= f.submit "Save" %>
+    </div>
   <% end %>
+
 
   <%= link_to 'Back', events_path %>
 
