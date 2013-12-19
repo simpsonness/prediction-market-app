@@ -1,4 +1,4 @@
-<h1>GOGOGO</h1>
+<h1>PREDICTIOUS</h1>
   <%= form_for @order, :url => event_orders_path(params[:event_id]) do |f| %>
 <div class="editor">
     Quantity: 1
@@ -13,8 +13,8 @@
 </div>
     
 
-
-    <%= f.submit "Save" %>
+<div class="actions"><%= f.submit nil, :class => "button" %></div>
+   
 
   <% end %>
  
