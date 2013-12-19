@@ -10,7 +10,7 @@ class Event < ActiveRecord::Base
   belongs_to :owner, :class_name => "User", :foreign_key => "owner_id"
 
   def can_order?
-    self.start_time < Time.zone.now && Time.zone.now < self.end_time
+    self.start_time < Time.zone.now && Time.zone.now < self.end_time if start_time && end_time
   end
 
   
