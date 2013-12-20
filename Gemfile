@@ -49,8 +49,9 @@ end
 # Use Capistrano for deployment
 # gem 'capistrano', group: :development
 
+gem "mini_magick"
 # Use debugger
-# gem 'debugger', group: [:development, :test]
+gem 'debugger', group: [:development, :test]
 
 gem 'rails_12factor', group: :production
 gem 'pg'

@@ -1,7 +1,9 @@
 <h1>Events</h1>
 <% @events.each do |event| %>
-<p><%= link_to "#{event.title}", event_path(event) %></p>
+  <%= image_tag event.avatar.thumb.url %>
+  <p><%= link_to "#{event.title}", event_path(event) %></p>
 <% end %>
 
-<%=link_to"Create", new_event_path %>
-<%=link_to"User", users_path %>
+<%=link_to"Create Event", new_event_path %>
+<br/>
+<%=link_to "Show Users", users_path %>

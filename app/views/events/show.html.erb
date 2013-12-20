@@ -1,54 +1,58 @@
-
-
+<div class="row">
+  
+  <div class="large-6 columns">
     <h1><%= @event.title %></h1>
     <p><%= @event.description %></p>
-  </a>
-  <div class="box">
- <% if @event.can_order? %> 
-  <div class="buy-sell" style="background-color:#3399cc">
-   Sell Price
-   <p><%=  @event.sell_price %></p>
-  </div>
-  <div class="buy-sell" style="background-color:#3399cc">
-   buy Price
-   <p><%=  @event.price %></p>
-  </div>
-   start time
-   <p><%= @event.start_time %></p>
 
-   end time
-   <p><%= @event.end_time %></p>
- </a>
+    <div class="box">
+      <% if @event.can_order? %> 
+        <div class="row">
+          <%= link_to new_event_order_path(params[:id]) do %>
+            <div class="wrapper price">
+             
+              <p class="trade" id="sell">
+                <span class="big-price"><%= @event.sell_price %></span>
+                mBTC
+              </p>
+            </div>
+          <% end %>
 
-   <%= link_to 'Order', new_event_order_path(params[:id]) %>
-   <%= link_to "Edit", edit_event_path %>
+          <%= link_to new_event_order_path(params[:id]) do %>
+           <!--  <div class="wrapper price">
+              buy Price
+              <p class="trade" id="buy"><%=  @event.price %></p>
+            </div> -->
+          <% end %>
+         </div>
+        
+        <h3>Started: <%= @event.start_time %></h3>
 
-  <% else %>
+  
+       <h3>Ends: <%= @event.end_time %></h3>
 
-  <div data-alert class="alert-box time is over">
-  Time is over.
-<!--   <a href="#" class="close">&times;</a> -->
-  </div>
+        <% if current_user.id == @event.owner_id %>
+          <%= link_to "Edit", edit_event_path(@event) %>
+        <% end %>
 
+      <% else %>
 
-  <% end %>    
-    <div class="Chart">
-      <canvas id="myChart" width="600" height="600"></canvas>    
+        <div data-alert class="alert-box time is over">
+          Time is over.
+          <!--   <a href="#" class="close">&times;</a> -->
+        </div>
+        
+
+      <% end %>    
+      <div class="Chart">
+        <canvas id="myChart" width="400" height="400"></canvas>    
+      </div>
     </div>
   </div>
 
- <div class="box">
-
-
-<%= image_tag @event.avatar, :class => "image_preview" %><br>
-
-
-<%= link_to 'Back', events_path %>
-
+  <div class="large-6 columns">
+    <div class="event-avatar-container">
+      <%= image_tag @event.avatar %><br>
+      <%= link_to 'Back', events_path %>
+    </div>
+  </div>
 </div>
-
-
-
-
-
-

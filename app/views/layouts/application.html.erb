@@ -10,15 +10,24 @@
     <%= csrf_meta_tags %>
   </head>
   <body>
-      <%=render partial:"layouts/nav"%>
-
-    <% flash.each do |name, msg| %>
-      <%= content_tag :div, msg, class: name %>
-    <% end %>
-
+    <div class="row">
+      <div class="large-12 columns">
+        <%=render partial:"layouts/nav"%>
+      </div>
+    </div>
+    <div class="row">
+      <div class="large-12 columns">
+      <% flash.each do |name, msg| %>
+        <%= content_tag :div, msg, class: name %>
+      <% end %>
+      </div>
+    </div>
     
-
-    <%= yield %>
+    <div class="row">
+      <div class="large-12 columns">
+        <%= yield %>
+      </div>
+    </div>
     <%= javascript_include_tag "application" %>
   </body>
 </html>
