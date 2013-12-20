@@ -1,36 +1,51 @@
-<h1><%= @event.title %></h1>
-<p><%= @event.description %></p>
 
-<canvas id="myChart" width="400" height="400"></canvas><br>
 
+    <h1><%= @event.title %></h1>
+    <p><%= @event.description %></p>
+  </a>
+  <div class="box">
  <% if @event.can_order? %> 
-
+  <div class="buy-sell" style="background-color:#3399cc">
    Sell Price
    <p><%=  @event.sell_price %></p>
-
+  </div>
+  <div class="buy-sell" style="background-color:#3399cc">
    buy Price
    <p><%=  @event.price %></p>
-
+  </div>
    start time
    <p><%= @event.start_time %></p>
 
    end time
    <p><%= @event.end_time %></p>
+ </a>
 
    <%= link_to 'Order', new_event_order_path(params[:id]) %>
    <%= link_to "Edit", edit_event_path %>
 
   <% else %>
 
-  <p><h2>Time is over</h2></p>
-   
+  <div data-alert class="alert-box time is over">
+  Time is over.
+<!--   <a href="#" class="close">&times;</a> -->
+  </div>
 
-  <% end %>
 
-<%= image_tag @event.avatar %><br>
+  <% end %>    
+    <div class="Chart">
+      <canvas id="myChart" width="600" height="600"></canvas>    
+    </div>
+  </div>
+
+ <div class="box">
+
+
+<%= image_tag @event.avatar, :class => "image_preview" %><br>
 
 
 <%= link_to 'Back', events_path %>
+
+</div>
 
 
 

@@ -10,23 +10,13 @@
     <%= csrf_meta_tags %>
   </head>
   <body>
+      <%=render partial:"layouts/nav"%>
+
     <% flash.each do |name, msg| %>
       <%= content_tag :div, msg, class: name %>
     <% end %>
 
-    <%= link_to "Huge Apple", root_path %><br>
-   <% if current_user %>
-      <%= current_user.username %>
-      <%= link_to "logout", logout_path %><br>
-    <% else %>
-      <%= link_to "Sign Up", signup_path %> or
-      <%= link_to "Sign In", login_path %>
-      <% end %>
-    <div id="logged-in-user">
-      <% if current_user %>
-        <%= current_user.username %>
-      <% end %>
-    </div> 
+    
 
     <%= yield %>
     <%= javascript_include_tag "application" %>
